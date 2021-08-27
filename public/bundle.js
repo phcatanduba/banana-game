@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("const canvas = document.querySelector('#canvas');\nconst context = canvas.getContext('2d');\ncontext.fillRect(100, 100, 10, 30);\n\n\n//# sourceURL=webpack://redball-aula-oo/./src/index.ts?");
+eval("const canvas = document.querySelector('#canvas');\nconst screenWidth = window.innerWidth;\nconst screenHeight = window.innerHeight;\ncanvas.width = screenWidth;\ncanvas.height = screenHeight - 100;\nconst context = canvas.getContext('2d');\nconst alienImage = document.querySelector('#alien');\ncontext.drawImage(alienImage, (screenWidth - 64) / 2, screenHeight - 200, 64, 97);\ncanvas.addEventListener('touchmove', (e) => {\n    const distanceMoved = e.changedTouches[0].clientX - (screenWidth - 64);\n    context.clearRect(0, 0, screenWidth, screenHeight);\n    context.drawImage(alienImage, (screenWidth - 64 + distanceMoved) / 2, screenHeight - 200, 64, 97);\n});\n\n\n//# sourceURL=webpack://redball-aula-oo/./src/index.ts?");
 
 /***/ })
 
